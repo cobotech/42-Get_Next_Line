@@ -6,7 +6,7 @@
 /*   By: ykomori <ykomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 10:25:49 by ykomori           #+#    #+#             */
-/*   Updated: 2026/10/19 12:24:20 by ykomori          ###   ########.fr       */
+/*   Updated: 2026/10/21 03:35:21 by ykomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,22 +74,6 @@ size_t	gnl_strlen(const char *s)
 		counter += 1;
 	}
 	return (counter);
-}
-
-int	main(void)
-{
-	char	*test;
-
-	// char	*s;
-	// s = NULL;
-	// s = gnl_strjoin(s, "Hello");
-	// s = gnl_strjoin(s, "World");
-	// printf("%s\n", s);
-	// free(s);
-	test = gnl_substr("hello", 0, 2);
-	printf("%s\n", test);
-	free(test);
-	return (0);
 }
 
 char	*gnl_find_newline(const char *stash)
