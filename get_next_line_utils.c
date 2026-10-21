@@ -6,7 +6,7 @@
 /*   By: ykomori <ykomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 10:25:49 by ykomori           #+#    #+#             */
-/*   Updated: 2026/10/21 03:35:21 by ykomori          ###   ########.fr       */
+/*   Updated: 2026/10/21 09:08:56 by ykomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,18 @@ char	*gnl_strjoin(char *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	strings = (char *)malloc(sizeof(char) * (gnl_strlen(s1) + gnl_strlen(s2)
-				+ 1));
+	strings = (char *)malloc((gnl_strlen(s1) + gnl_strlen(s2) + 1));
 	if (strings == NULL)
 	{
 		free(s1);
 		return (NULL);
 	}
-	while (i < gnl_strlen(s1))
+	while ((s1 && s1[i]))
 	{
 		strings[i] = s1[i];
 		i++;
 	}
-	while (j < gnl_strlen(s2))
+	while (s2[j])
 	{
 		strings[i + j] = s2[j];
 		j++;

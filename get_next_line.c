@@ -6,7 +6,7 @@
 /*   By: ykomori <ykomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/02 10:14:34 by ykomori           #+#    #+#             */
-/*   Updated: 2026/10/21 08:49:45 by ykomori          ###   ########.fr       */
+/*   Updated: 2026/10/21 09:06:04 by ykomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ static char	*update_leftover(char *leftover)
 	free(leftover);
 	return (new_leftover);
 }
+
 char	*get_next_line(int fd)
 {
 	static char	*leftover;
@@ -85,6 +86,12 @@ char	*get_next_line(int fd)
 	if (leftover == NULL)
 		return (NULL);
 	line = extract_line(leftover);
+	if (line == NULL)
+	{
+		free(leftover);
+		leftover = NULL;
+		return (NULL);
+	}
 	leftover = update_leftover(leftover);
 	return (line);
 }
